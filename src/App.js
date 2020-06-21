@@ -13,15 +13,17 @@ import { CSSTransition } from 'react-transition-group';
 function App() {
   return (
     <Navbar>
-      <NavItem icon = { <PlusIcon /> } />
-      <NavItem icon = { <BellIcon /> } />
-      <NavItem icon = { <MessengerIcon /> } />
-
-      <NavItem icon = { <CaretIcon /> }>
-
-        <DropdownMenu/>
-
+      <NavItem icon = { <h2 style={{}}>About</h2> }>
+        <AboutDropdownMenu/>
       </NavItem>
+      <NavItem icon = { <h2 style={{}}>Projects</h2> }>
+        <ProjectsDropdownMenu/>
+      </NavItem>
+      <NavItem icon = { <h2 style={{}}>Contact</h2> }/>
+
+      {/* <NavItem icon = { <CaretIcon /> }>
+        <DropdownMenu/>
+      </NavItem> */}
 
     </Navbar>
   );
@@ -117,6 +119,86 @@ function DropdownMenu() {
           </div>
       </CSSTransition>
 
+    </div>
+  );
+}
+
+function AboutDropdownMenu() {
+
+  const [activeMenu, setActiveMenu] = useState('main');
+  const [menuHeight, setMenuHeight] = useState(null)
+
+  function calcHeight(el) {
+    const height = el.offsetHeight;
+    setMenuHeight(height);
+  }
+
+  function DropdownItem(props) {
+    return(
+      <a href="#" className="menu-item" onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
+
+        {/* <span className="icon-button">{ props.leftIcon }</span> */}
+        { props.children }
+
+        {/* <span className="icon-right">{ props.rightIcon }</span> */}
+      </a>
+    );
+  }
+
+  return (
+    <div className="dropdown" style={{ height: menuHeight }}>
+      <CSSTransition 
+        in={activeMenu === 'main'} 
+        unmountOnExit 
+        timeout={500}
+        classNames='menu-primary'
+        onEnter={calcHeight}
+        >
+          <div className='menu'>
+            <DropdownItem>Nathan D. Guthrie</DropdownItem>
+            <DropdownItem>Steve Hall</DropdownItem>
+          </div>
+      </CSSTransition>
+    </div>
+  );
+}
+
+function ProjectsDropdownMenu() {
+
+  const [activeMenu, setActiveMenu] = useState('main');
+  const [menuHeight, setMenuHeight] = useState(null)
+
+  function calcHeight(el) {
+    const height = el.offsetHeight;
+    setMenuHeight(height);
+  }
+
+  function DropdownItem(props) {
+    return(
+      <a href="#" className="menu-item" onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
+
+        {/* <span className="icon-button">{ props.leftIcon }</span> */}
+        { props.children }
+
+        {/* <span className="icon-right">{ props.rightIcon }</span> */}
+      </a>
+    );
+  }
+
+  return (
+    <div className="dropdown" style={{ height: menuHeight }}>
+      <CSSTransition 
+        in={activeMenu === 'main'} 
+        unmountOnExit 
+        timeout={500}
+        classNames='menu-primary'
+        onEnter={calcHeight}
+        >
+          <div className='menu'>
+            <DropdownItem>Distralite</DropdownItem>
+            <DropdownItem>Minotaur Hoof</DropdownItem>
+          </div>
+      </CSSTransition>
     </div>
   );
 }
