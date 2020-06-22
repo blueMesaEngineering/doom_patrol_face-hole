@@ -13,13 +13,16 @@ import { CSSTransition } from 'react-transition-group';
 function App() {
   return (
     <Navbar>
-      <NavItem icon = { <h2 style={{}}>About</h2> }>
+      <NavItem icon = { <h2>Home</h2> }>
+
+      </NavItem>
+      <NavItem icon = { <h2>About</h2> }>
         <AboutDropdownMenu/>
       </NavItem>
-      <NavItem icon = { <h2 style={{}}>Projects</h2> }>
+      <NavItem icon = { <h2>Projects</h2> }>
         <ProjectsDropdownMenu/>
       </NavItem>
-      <NavItem icon = { <h2 style={{}}>Contact</h2> }/>
+      <NavItem icon = { <h2>Contact</h2> }/>
 
       {/* <NavItem icon = { <CaretIcon /> }>
         <DropdownMenu/>
