@@ -7,121 +7,67 @@ import { ReactComponent as CogIcon } from './icons/cog.svg';
 import { ReactComponent as ChevronIcon } from './icons/chevron.svg';
 import { ReactComponent as ArrowIcon } from './icons/arrow.svg';
 import { ReactComponent as BoltIcon } from './icons/bolt.svg';
-
 import { CSSTransition } from 'react-transition-group';
 
+
+import { Router } from '@reach/router'
+import Home from './pages/Home'
+import Contact from './pages/Contact'
+import Ndguthrie from './pages/about/Ndguthrie'
+import Shallphd from './pages/about/Shallphd'
+
+
 function App() {
-  return (
-    <Navbar>
-      <NavItem icon = { <h2>Home</h2> }>
-
-      </NavItem>
-      <NavItem icon = { <h2>About</h2> }>
-        <AboutDropdownMenu/>
-      </NavItem>
-      <NavItem icon = { <h2>Projects</h2> }>
-        <ProjectsDropdownMenu/>
-      </NavItem>
-      <NavItem icon = { <h2>Contact</h2> }/>
-
-      {/* <NavItem icon = { <CaretIcon /> }>
-        <DropdownMenu/>
-      </NavItem> */}
-
-    </Navbar>
-  );
-}
-
-function DropdownMenu() {
-
-  const [activeMenu, setActiveMenu] = useState('main');
-  const [menuHeight, setMenuHeight] = useState(null)
-
-  function calcHeight(el) {
-    const height = el.offsetHeight;
-    setMenuHeight(height);
-  }
-
-  function DropdownItem(props) {
-    return(
-      <a href="#" className="menu-item" onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
-
-        <span className="icon-button">{ props.leftIcon }</span>
-        { props.children }
-
-        <span className="icon-right">{ props.rightIcon }</span>
-      </a>
-    );
-  }
+  const navLinks = [
+    {
+      text: 'Home',
+      path: '/',
+      // icon: 'ion-ios-home',
+    },
+    {
+      text: 'Contact',
+      path: '/Contact',
+      // icon: 'ion-ios-megaphone',
+    },
+    {
+      text: 'About',
+      path: '/about',
+      // icon: 'ion-ios-business',
+    },
+    {
+      text: 'Blog',
+      path: '/blog',
+      // icon: 'ion-ios-bonfire',
+    },
+    {
+      text: 'Portfolio',
+      path: '/portfolio',
+      // icon: 'ion-ios-briefcase',
+    }
+  ]
 
   return (
-    <div className="dropdown" style={{ height: menuHeight }}>
-      <CSSTransition 
-        in={activeMenu === 'main'} 
-        unmountOnExit 
-        timeout={500}
-        classNames='menu-primary'
-        onEnter={calcHeight}
-        >
-          <div className='menu'>
-            <DropdownItem>My Profile</DropdownItem>
-            <DropdownItem
-              leftIcon={<CogIcon />}
-              rightIcon={<ChevronIcon />}
-              goToMenu="settings"
-              >                
-                Settings
-            </DropdownItem>
-          </div>
-      </CSSTransition>
+    <div>
+      <Navbar
+        navLinks={ navLinks }
+      >
+        <NavItem icon = { <h2><a href="/home">Home</a></h2> }/>
+        <NavItem icon = { <h2>About</h2> }>
+          <AboutDropdownMenu/>
+        </NavItem>
+        <NavItem icon = { <h2>Projects</h2> }>
+          <ProjectsDropdownMenu/>
+        </NavItem>
+        <NavItem icon = { <h2><a href="/contact">Contact</a></h2> }/>
+      </Navbar>
 
-      <CSSTransition 
-        in={activeMenu === 'settings'} 
-        unmountOnExit 
-        timeout={500}
-        classNames='menu-secondary'
-        onEnter={calcHeight}
-        >
-          <div className='menu'>
-            <DropdownItem leftIcon={<ArrowIcon />} goToMenu='main' />
-            <DropdownItem
-              leftIcon={<CogIcon />}
-              rightIcon={<ChevronIcon />}>
-                Settings
-            </DropdownItem>
-            <DropdownItem
-              leftIcon={<CogIcon />}
-              rightIcon={<ChevronIcon />}>
-                Settings
-            </DropdownItem>
-            <DropdownItem
-              leftIcon={<CogIcon />}
-              rightIcon={<ChevronIcon />}>
-                Settings
-            </DropdownItem>
-            <DropdownItem
-              leftIcon={<CogIcon />}
-              rightIcon={<ChevronIcon />}>
-                Settings
-            </DropdownItem>
-            <DropdownItem
-              leftIcon={<CogIcon />}
-              rightIcon={<ChevronIcon />}>
-                Settings
-            </DropdownItem>
-            <DropdownItem
-              leftIcon={<CogIcon />}
-              rightIcon={<ChevronIcon />}>
-                Settings
-            </DropdownItem>
-            <DropdownItem
-              leftIcon={<CogIcon />}
-              rightIcon={<ChevronIcon />}>
-                Settings
-            </DropdownItem>
-          </div>
-      </CSSTransition>
-
+      <Router>
+      < Contact path = "/contact" />
+      {/* < Portfolio path = "/portfolio" /> */}
+      < Home path = "/home" />
+      < Ndguthrie path = "/ndguthrie" />
+      < Shallphd path = "/shallphd" />
+      </Router>
     </div>
   );
 }
@@ -158,8 +104,8 @@ function AboutDropdownMenu() {
         onEnter={calcHeight}
         >
           <div className='menu'>
-            <DropdownItem>Nathan D. Guthrie</DropdownItem>
-            <DropdownItem>Steve Hall</DropdownItem>
+            <DropdownItem><a href="/ndguthrie">Nathan D. Guthrie</a></DropdownItem>
+            <DropdownItem><a href="/shallphd">Steve Hall</a></DropdownItem>
           </div>
       </CSSTransition>
     </div>

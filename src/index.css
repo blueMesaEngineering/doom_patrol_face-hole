@@ -44,7 +44,7 @@ a {
   max-width: 100%;
   height: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-evenly;
 }
 
 .nav-item {
@@ -83,7 +83,7 @@ a {
   position: absolute;
   top: 58px;
   width: 300px;
-  transform: translateX(-87.5%);
+  transform: translateX(-60%);
   background-color: var(--bg);
   border: var(--border);
   border-radius: var(--border-radius);
@@ -150,4 +150,46 @@ a {
 .menu-secondary-exit-active {
   transform: translateX(110%);
   transition: all var(--speed) ease;  
+}
+
+/* Styles for Pages */
+
+h1,
+h2,
+p,
+ul,
+li {
+  font-family: sans-serif;
+}
+
+img.profile {
+  /* height: 200px; */
+  width: 15vw;
+  padding: 0 10vw 0 10vw;
+}
+.left {
+  float: left;
+  padding: 0 20px 20px 0;
+}
+.projects {
+  width: 25vw;
+  padding-right: 10vw;
+  padding-left: 10vw;
+}
+.gradientToLeft {
+  background-image: linear-gradient(
+    to left,
+    rgba(255, 0, 0, 0),
+    rgba(0, 0, 0, 0.7)
+  );
+}
+
+table.standardTable {
+  width: 80%;
+}
+.projectsTable {
+  width: 60%;
+}
+.profileTable {
+  width: 80%;
 }
