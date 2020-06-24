@@ -190,4 +190,4 @@ function NavItem(props) {
   );
 }
 
-export default App;
+export default NavbarDropdownMenu;
