@@ -1,47 +1,24 @@
 import React, { useState } from 'react';
-import { ReactComponent as BellIcon } from './icons/bell.svg';
-import { ReactComponent as MessengerIcon } from './icons/messenger.svg';
-import { ReactComponent as CaretIcon } from './icons/caret.svg';
-import { ReactComponent as PlusIcon } from './icons/plus.svg';
-import { ReactComponent as CogIcon } from './icons/cog.svg';
-import { ReactComponent as ChevronIcon } from './icons/chevron.svg';
-import { ReactComponent as ArrowIcon } from './icons/arrow.svg';
-import { ReactComponent as BoltIcon } from './icons/bolt.svg';
+// import { ReactComponent as BellIcon } from './icons/bell.svg';
+// import { ReactComponent as MessengerIcon } from './icons/messenger.svg';
+// import { ReactComponent as CaretIcon } from './icons/caret.svg';
+// import { ReactComponent as PlusIcon } from './icons/plus.svg';
+// import { ReactComponent as CogIcon } from './icons/cog.svg';
+// import { ReactComponent as ChevronIcon } from './icons/chevron.svg';
+// import { ReactComponent as ArrowIcon } from './icons/arrow.svg';
+// import { ReactComponent as BoltIcon } from './icons/bolt.svg';
 import { CSSTransition } from 'react-transition-group';
 
-
 import { Router } from '@reach/router'
-import Home from './pages/Home'
-import Contact from './pages/Contact'
-import Ndguthrie from './pages/about/Ndguthrie'
-import Shallphd from './pages/about/Shallphd'
-import Distralite from './pages/projects/Distralite'
-import Minotaurshoof from './pages/projects/Minotaurshoof'
+import Home from '../pages/Home'
+import Contact from '../pages/Contact'
+import Ndguthrie from '../pages/about/Ndguthrie'
+import Shallphd from '../pages/about/Shallphd'
+import Distralite from '../pages/projects/Distralite'
+import Minotaurshoof from '../pages/projects/Minotaurshoof'
 
 
-function App() {
-  const navLinks = [
-    {
-      text: 'Home',
-      path: '/',
-      // icon: 'ion-ios-home',
-    },
-    {
-      text: 'Contact',
-      path: '/Contact',
-      // icon: 'ion-ios-megaphone',
-    },
-    {
-      text: 'About',
-      path: '/about',
-      // icon: 'ion-ios-business',
-    },
-    {
-      text: 'Portfolio',
-      path: '/portfolio',
-      // icon: 'ion-ios-briefcase',
-    }
-  ]
+function NavBar({ navLinks }) {
 
   return (
     <div>
@@ -190,4 +167,4 @@ function NavItem(props) {
   );
 }
 
-export default NavbarDropdownMenu;
+export default NavBar;
