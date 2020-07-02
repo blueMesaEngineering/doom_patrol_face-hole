@@ -1,6 +1,8 @@
 import React from "react";
 import gearHousing from "../assets/Images/Backgrounds/gearHousingBackground.png";
 import background from '../assets/Images/Backgrounds/blueEngineeringBackground.jpg'
+import logoText from '../assets/Images/Other/logoText.svg'
+import mottoText from '../assets/Images/Other/mottoText.svg'
 
 const styles = {
   backgroundStyle: {
@@ -30,25 +32,33 @@ class Home extends React.Component {
           <center>
             <div style={{ 
                     backgroundImage: `url(${background})`, 
-                    // backgroundPositionY: "-100px",
                     backgroundSize: "cover",
-                    height: "60vh",
-                    width: "70vw"
-                }}
-            >
-                <h2 className="content" style={{ paddingTop: "40px", fontSize: 30 }}>Design. Build. Create. Learn.</h2>
-                <h3 style={{ paddingRight: "100px",
-                              paddingLeft: "100px"}}>
-                  <p>Blue Mesa Engineering was born out of a brainstorming effort to solve a real world design engineering problem - a classic case of "How do we build a better mousetrap?"  Since then, having developed a tactical product, it has been growing organcially in the field of software engineering, and is always interested to learn about new problems to solve.</p>
-                  <p>Have an idea?</p>
-                  <p>Want to discuss?</p>
-                  <p>
-                      We are currently active in the Software Engineering,
-                      Mechanical Design Engineering, and Biomedical
-                      Engineering spaces.
-                  </p>
-                  <p>Have a look at our projects for more information.</p>
-                </h3>
+                    height: "80vh",
+                    width: "70vw",
+                    color: 'white'
+                  }}
+                  >
+              <h2>
+                <img src={ logoText } alt="Blue Mesa Engineering Logo" 
+                    style={{ 
+                            paddingTop: "100px",
+                            width: "50vw"
+                            }}/>
+                {/* <img src={ logoText } alt="Blue Mesa Engineering Logo"
+                    style={{
+                            paddingTop: "100px",
+                            width: "50vw"
+                            }}/> */}
+
+                <img src={ mottoText } alt="Blue Mesa Engineering Motto"
+                   style={{ 
+                            paddingTop: "100px",
+                            width: "50vw"
+                            }}/>
+              </h2>
+              {/* <h2 className="content" 
+                  style={{  paddingTop: "40px",
+                            width: "40vw" }}>Design. Build  Create. Learn.</h2> */}
             </div>
           </center>
         </div>
