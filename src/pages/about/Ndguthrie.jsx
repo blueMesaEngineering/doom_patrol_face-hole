@@ -1,5 +1,6 @@
 import React from "react";
 import Nathan from "../../assets/Images/Profiles/NDG-Profile-20190714.png";
+import { ContentWrap } from '../pageContentStyles/contentStyles';
 
 class Ndguthrie extends React.Component {
   componentDidMount() {
@@ -15,12 +16,18 @@ class Ndguthrie extends React.Component {
               <h2 className="content" style={{ paddingTop: "40px", fontSize: 30 }}>Collaborators</h2>
             </center>
           </div>
-          {/* <hr style={{ width: "75%" }} /> */}
           <div>
             <table className="standardTable">
               <tr>
                 <th>
-                  <img className="profile" src={Nathan} alt={"ND Guthrie"} />
+                  <img 
+                      className="img"
+                      src={Nathan}
+                      alt={"ND Guthrie"}
+                      style={{ width: "30vh",
+                      paddingLeft: "5%",
+                      paddingRight: "5%" }} />
+
                   <p>Nathan D. Guthrie</p>
                 </th>
                 <th>
@@ -47,7 +54,6 @@ class Ndguthrie extends React.Component {
               </tr>
             </table>
           </div>
-          {/* <hr style={{ width: "75%" }} /> */}
         </center>
       </div>
     );
