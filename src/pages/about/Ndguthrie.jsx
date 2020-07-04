@@ -11,11 +11,16 @@ class Ndguthrie extends React.Component {
     return (
       <center>
         <ContentWrap>
+          <div style={{ padding: "0px" }}>
+            <center>
+              <h2 className="content" style={{ paddingTop: "40px", fontSize: 30 }}>Nathan D. Guthrie</h2>
+            </center>
+          </div>
           <div className="boxWrap">
             <img  className="img"
                   src={ Nathan }
                   style={{ width: "30vh",
-                            paddingTop: "5%"
+                            // paddingTop: "5%"
                         }}/>
             <div className="cont">
               <p>

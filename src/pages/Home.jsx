@@ -33,7 +33,7 @@ class Home extends React.Component {
             <div style={{ 
                     backgroundImage: `url(${background})`, 
                     backgroundSize: "cover",
-                    height: "80vh",
+                    height: "65vh",
                     width: "70vw",
                     color: 'white'
                   }}
@@ -50,11 +50,11 @@ class Home extends React.Component {
                             width: "50vw"
                             }}/> */}
 
-                <img src={ mottoText } alt="Blue Mesa Engineering Motto"
+                {/* <img src={ mottoText } alt="Blue Mesa Engineering Motto"
                    style={{ 
                             paddingTop: "100px",
                             width: "50vw"
-                            }}/>
+                            }}/> */}
               </h2>
               {/* <h2 className="content" 
                   style={{  paddingTop: "40px",

@@ -5,7 +5,7 @@ const media = {
 }
 
 export const ContentWrap = styled.div`
-  width: 100%;
+  width: 90%;
   // border: 1px solid green;
   display: flex;
   flex-flow: column nowrap;
@@ -25,7 +25,7 @@ export const ContentWrap = styled.div`
   }
 
   .boxWrap {
-    width: 90%;
+    width: 85%;
     // border: 1px solid blue;
     
     ${media.desktop} {
@@ -59,7 +59,7 @@ export const ContentWrap = styled.div`
       ${media.desktop} {
         margin: 0;
         width: 48%;
-        padding: 10%;
+        padding: 2%;
       }
     }
   }
