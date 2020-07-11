@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import { NavLink } from "react-router-dom";
 
 
 function NavBar({ navLinks }) {
@@ -9,14 +10,22 @@ function NavBar({ navLinks }) {
       <NavbarDropdownMenu
         navLinks={ navLinks }
       >
-        <NavItem icon = { <h2><a href="/">Home</a></h2> }/>
+        <NavItem icon = { <h2>
+                            <NavLink exact to="/">
+                              Home
+                            </NavLink>
+                          </h2> }/>
         <NavItem icon = { <h2>About</h2> }>
           <AboutDropdownMenu/>
         </NavItem>
         <NavItem icon = { <h2>Projects</h2> }>
           <ProjectsDropdownMenu/>
         </NavItem>
-        <NavItem icon = { <h2><a href="/contact">Contact</a></h2> }/>
+        <NavItem icon = { <h2>
+                            <NavLink exact to="/contact">
+                              Contact
+                            </NavLink>
+                          </h2> }/>
       </NavbarDropdownMenu>
     </div>
   );
@@ -51,19 +60,19 @@ function AboutDropdownMenu() {
         >
         <div className='menu'>
           <DropdownItem>
-            <a href="/about">
+            <NavLink exact to="/about">
               About Blue Mesa
-            </a>
+            </NavLink>
           </DropdownItem>
           <DropdownItem>
-            <a href="/ndguthrie">
+            <NavLink exact to="/ndguthrie">
               Nathan D. Guthrie
-            </a>
+            </NavLink>
           </DropdownItem>
           <DropdownItem>
-            <a href="/shallphd">
+            <NavLink exact to="/shallphd">
               Steve Hall
-            </a>
+            </NavLink>
           </DropdownItem>
         </div>
       </CSSTransition>
@@ -100,14 +109,14 @@ function ProjectsDropdownMenu() {
         >
           <div className='menu'>
             <DropdownItem>
-              <a href="/distralite">
+              <NavLink exact to="/distralite">
                 Distralite
-              </a>
+              </NavLink>
             </DropdownItem>
             <DropdownItem>
-              <a href="/minotaurshoof">
+              <NavLink exact to="/minotaurshoof">
                 Minotaur Hoof
-              </a>
+              </NavLink>
             </DropdownItem>
           </div>
       </CSSTransition>
